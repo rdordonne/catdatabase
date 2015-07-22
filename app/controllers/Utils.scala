@@ -12,6 +12,10 @@ object Utils {
   //ID generator
   private val currentId: AtomicLong = new AtomicLong(0L);
   
+  def getID: Long = {
+    currentId.incrementAndGet()
+  }
+  
   /**
    * initialization creates base path if necessary on application startup.
    */
@@ -28,10 +32,7 @@ object Utils {
     else
       true
   }
-  
-	def getID: Long = {
-		currentId.incrementAndGet()
-	}
+
   
   /**
    * isBlank checks if a string is empty or null.
