@@ -1,0 +1,66 @@
+@import 'bootstrap/bootstrap.less';
+@import 'dashboard.less';
+
+#addCat {
+	.make-md-column(2);
+	.sidebar;
+}
+dl {
+  clear: both;
+  padding: 10px;
+
+  dt {
+    float: left;
+    width: 60px;
+    font-weight: bold;
+  }
+
+  dd {
+    float: left;
+    margin-left: 10px;
+  }
+
+  .info {
+    display: none;
+  }
+
+  .error {
+    color: red;
+  }
+}
+
+.buttons {
+  clear: both;
+  padding: 10px;
+  input {
+  	.btn;
+  	.btn-default;
+  }
+}
+
+#cats {
+  .make-md-column(10); 
+  .make-md-column-offset(2);
+  .main;
+  .cat {
+  	margin-bottom: 5px;
+  	height: 135px;
+  	.picture {
+	  	.make-md-column(2);
+	  	img {
+	    	width: 135px;
+	    	height: 135px;
+	    	margin-right: 5px;
+		}
+	  } 
+	.cat_info{
+		.make-md-column(3);
+		.info_item {
+			margin-bottom: 2px;
+		}
+	  	.name {
+		    font-weight: bold;
+		  }
+	 }
+  }
+}

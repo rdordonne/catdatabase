@@ -1,0 +1,38 @@
+@(catForm: Form[CatForm])(implicit messages: Messages, flash: Flash)
+
+@import helper._
+
+@main(messages("title")) {
+	<script type='text/javascript' src='@routes.Assets.versioned("javascripts/index.js")'></script>
+
+	<div class="container">
+		<div class="row">
+			<div id="addCat">
+				@form(routes.CatController.addOrUpdateCat, 'enctype -> "multipart/form-data") {
+					<input type="hidden" name="id" value="" id="id" />
+					<input type="hidden" name="picture" value="" id="picture" />
+
+					@inputText(catForm("name"))
+					@inputText(catForm("age"))
+					@inputText(catForm("color"))
+					@inputFile(catForm("uploadedFile"))
+					@inputText(catForm("race"))
+					@inputRadioGroup(
+			          catForm("gender"),
+			          options = options("0"->messages("gender.male"),"1"->messages("gender.female")),
+			          '_label -> messages("gender.label"),
+			          '_error -> catForm("gender").error.map(_.withMessage(messages("gender.error")))
+			        )
+			
+					<div class="buttons">
+						<input type="submit" value="@messages("cat.add")"/>
+					</div>
+				}
+			</div>
+			
+			<div id="cats">
+				<h1 class="page-header">@messages("header")</h1>
+			</div>
+		</div>
+	</div>
+}

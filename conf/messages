@@ -1,0 +1,21 @@
+title = Welcome to CatDB
+header = Registered Cats
+
+name = Name
+age = Age
+race = Race
+color = Color
+picture = Picture
+uploadedFile = Picture
+
+gender.male = Male
+gender.female = Female
+gender.error = Select a Gender
+gender.label = Gender
+
+cat.add = Add a Cat
+cat.delete.link = Delete this cat
+cat.delete.done = Cat deleted
+cat.delete.failed = Cat deletion failed
+cat.delete.progress = Cat deletion ongoing
+cat.error.notfound = Cat not found

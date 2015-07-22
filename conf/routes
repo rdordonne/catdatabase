@@ -1,0 +1,16 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+#@TODO Change get to delete call
+
+# Home page
+GET     /                           controllers.CatController.index
+POST    /cat                     	controllers.CatController.addOrUpdateCat
+GET     /cats                    	controllers.CatController.getCats
+GET     /cat/:id                    controllers.CatController.getCat(id: Long)
+DELETE     /cat/:id                 controllers.CatController.deleteCat(id: Long)
+GET		/allcatdetails				controllers.CatController.getAllCatsDetails
+GET     /images/:file 				controllers.ImageController.getImage(file: String)
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

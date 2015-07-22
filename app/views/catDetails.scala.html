@@ -1,0 +1,25 @@
+@(cats: Seq[Cat])(implicit messages: Messages, flash: Flash)
+
+@import helper._
+
+@for(cat <- cats){
+<div class="cat" onclick='catSelected(@cat.id)' id="catInfo_@cat.id">
+	<div class="picture">
+		<img src="/images/@cat.picture" />
+	</div>
+	<div class="cat_info">
+		<div class="info_item name">@cat.name</div>
+		<div class="info_item age">@cat.age</div>
+		<div class="info_item color">@cat.color</div>
+		<div class="info_item race">@cat.race</div>
+		<div class="info_item gender">
+			@if(cat.gender == 0){
+				@messages("gender.male")
+			}else{
+				@messages("gender.female")
+				}
+		</div>
+		<input type='button' class="deleteCat" onclick='confirmDeletion(@cat.id)' value="@messages("cat.delete.link")"/>
+	</div>
+</div>
+}
